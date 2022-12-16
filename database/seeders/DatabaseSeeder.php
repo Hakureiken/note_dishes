@@ -16,11 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\User::factory(10)->create();
-        \App\Models\Restaurant::factory(10)->create();
-        \App\Models\Dish::factory(10)->create();
-        \App\Models\DishRestaurant::factory(10)->create();
-        \App\Models\UserDishRestaurant::factory(10)->create();
-
         \App\Models\User::factory()->create([
             'name' => 'Kévin',
             'email' => 'lanza@gmail.com',
@@ -28,5 +23,9 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
         ]);
+        \App\Models\Restaurant::factory(10)->create();
+        \App\Models\Dish::factory(10)->create();
+        \App\Models\Review::factory(10)->create();
+
     }
 }
